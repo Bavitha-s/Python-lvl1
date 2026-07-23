@@ -3,9 +3,10 @@ import random
 user_score = 0
 computer_score = 0
 
+user1 = input("Enter your name: ")
+user2 = "Computer"
+
 while True:
-    user1 = input("Enter your name: ")
-    user2 = "Computer"
 
     print("Options: ")
     print("1. Rock\n2. Paper\n3. Scissors")
