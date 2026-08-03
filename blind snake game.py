@@ -1,38 +1,29 @@
-"""
-length: 
-1. up 
-2. down 
-3. left 
-4. right 
-Enter a direction: 3 (food/empty/wall/bomb)
-"""
-
-import random 
-import os # clear the screen 
-import time # adding delay 
+import random
+import os
+import time
 
 directions = [2, 0, -1, -2]
 
-score = 0 
+score = 0
 hints_left = 3
 
 options = """Directions:
-1. Up 
-2. Down 
-3. Left 
+1. Up
+2. Down
+3. Left
 4. Right
 5. Get a Hint
 """
 
-hint = False 
+hint = False
 turn = True
 
-while True: 
+while True:
     print(f"Score: {score}")
     print(f"Hints remaining: {hints_left}")
     print(options)
 
-    if turn: 
+    if turn:
         random.shuffle(directions)
 
     direction = int(input("Choose your direction: "))
@@ -41,7 +32,7 @@ while True:
         if hints_left > 0:
             hint = True
             hints_left -= 1
-            turn = False 
+            turn = False
 
             danger = []
 
@@ -55,23 +46,24 @@ while True:
         else:
             print("No hints left!")
 
-    else:
+    elif direction >= 1 and direction <= 4:
+
         reward = directions[direction - 1]
 
         match reward:
             case -1:
                 print("Hit a wall")
-                print("Game End..")
-                print(f"Your final Score: {score}")
-                break 
+                print("Game End...")
+                print(f"Final Score: {score}")
+                break
 
             case -2:
                 print("Hit a bomb")
-                print("Game End..")
-                print(f"Your final Score: {score}")
+                print("Game End...")
+                print(f"Final Score: {score}")
                 break
 
-            case 0: 
+            case 0:
                 print("No food")
 
             case 2:
@@ -79,12 +71,23 @@ while True:
 
                 if hint:
                     score += 1
-                    hint = False 
+                    hint = False
                 else:
-                    score += 2 
+                    score += 2
 
-        turn = True 
+                if score >= 10:
+                    print("You Win!")
+                    print(f"Final Score: {score}")
+                    break
+
+        turn = True
+
+    else:
+        print("Invalid direction!")
 
     time.sleep(2)
-    os.system("clear")
 
+    try:
+        os.system("cls")
+    except:
+        os.system("clear")
