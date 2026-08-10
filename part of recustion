@@ -1,0 +1,18 @@
+def subtract(start, end):
+    if start == end:
+        return start  
+    else:
+        return start - subtract(start + 1, end)
+
+
+print(subtract(1, 5))
+
+def product(start, end):
+    if start == end:
+        return start  
+    else:
+        
+        return start * product(start + 1, end)
+
+
+print(product(1, 5))
