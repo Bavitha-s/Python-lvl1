@@ -1,0 +1,25 @@
+def build_report_card(subjects, marks):
+    report_card = {}
+
+    # Loop through the indexes of the lists
+    for i in range(len(subjects)):
+        subject = subjects[i]
+        mark = marks[i]
+        report_card[subject] = mark  # Add the key-value pair to the dictionary
+
+    return report_card
+
+
+# 2. Bonus Function: Calculating the average
+def average_mark(report_card):
+    total = 0
+
+    # Add up all the marks stored in the dictionary
+    for mark in report_card.values():
+        total += mark
+
+    # Calculate average
+    avg = total / len(report_card)
+
+    # Round to 2 decimal places to match sample output (86.33)
+    return round(avg, 2)
