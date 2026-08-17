@@ -1,0 +1,9 @@
+str1 = input("s1: ")
+str2 = input("s2: ")
+
+result = ""
+
+for a, b in zip(str1, str2):
+    result += a + b
+
+print("o/p:", result)
