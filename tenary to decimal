@@ -1,0 +1,9 @@
+tenary = input("Tenary: ")
+power = 0 
+decimal = 0 
+
+for digit in tenary[::-1]:
+    decimal = decimal + int(digit) * 3 ** power 
+    power += 1 
+
+print(f"Decimal: {decimal}")
