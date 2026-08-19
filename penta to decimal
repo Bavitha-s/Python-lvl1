@@ -1,0 +1,9 @@
+penta = input("Penta: ")
+power = 0 
+decimal = 0 
+
+for digit in penta[::-1]:
+    decimal = decimal + int(digit) * 5 ** power 
+    power += 1 
+
+print(f"Decimal: {decimal}")
