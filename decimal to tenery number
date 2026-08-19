@@ -1,0 +1,14 @@
+# tenary numbers
+
+number = int(input("Number: "))
+tenary_number = "" 
+while number > 0: 
+    # get the remainder 
+    remainder = number % 3 
+    tenary_number += str(remainder) # converting integer to string to add to the string tenary_number
+    number = number // 3 # result is always an integer 
+    
+ # reversing it beacuse binary numbers go bottom to top
+tenary_number = tenary_number[::-1]
+print(f"Tenary Number: {tenary_number}")
+    
