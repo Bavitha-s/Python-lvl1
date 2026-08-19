@@ -1,0 +1,20 @@
+'''
+decimal to binary 
+1. get the remainder after dividing with 2 
+- use string and concatinate the remainders to string 
+2. update the number by dividing with 2 
+3. repeate step 1 until number <= 0 
+
+'''
+number = int(input("Decimal Number: "))
+binary_number = "" 
+while number > 0: 
+    # get the remainder 
+    remainder = number % 2 
+    binary_number += str(remainder) # converting integer to string to add to the string binary_number
+    number = number // 2 # result is always an integer 
+    
+# top to bottom (remainders)
+binary_number = binary_number[::-1] # reversing it beacuse binary numbers go bottom to top
+print(f"Binary Number: {binary_number}")
+    
